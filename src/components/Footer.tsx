@@ -1,7 +1,9 @@
+import logo from "@/assets/landlordcare-logo.png";
+
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground py-12 px-6">
     <div className="max-w-5xl mx-auto text-center space-y-4">
-      <p className="font-semibold text-lg font-sans">Landlord Care</p>
+      <img src={logo} alt="Landlord Care" className="w-[140px] h-auto mx-auto" />
       <p className="text-sm text-primary-foreground/70">
         <a href="mailto:hello@landlordcare.mt" className="hover:text-gold transition-colors">hello@landlordcare.mt</a>
         {" · "}
