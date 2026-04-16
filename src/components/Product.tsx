@@ -1,5 +1,5 @@
 import { Check, Star } from "lucide-react";
-import signPhoto from "@/assets/sign-photo.png";
+import signPremium from "@/assets/sign-premium.png";
 
 const tiers = [
   {
@@ -24,7 +24,7 @@ const tiers = [
     description: "Brushed aluminium, laser engraved. For villas and luxury properties.",
     features: ["Brushed aluminium", "Laser engraved", "Premium finish", "MTA compliant"],
     popular: false,
-    image: signPhoto,
+    image: signPremium,
   },
 ];
 
