@@ -1,6 +1,7 @@
 import { Check, Star } from "lucide-react";
+import signBasic from "@/assets/sign-basic.png";
+import signStandard from "@/assets/sign-standard.png";
 import signPremium from "@/assets/sign-premium.png";
-import signHero from "@/assets/sign-photo.png";
 
 const tiers = [
   {
@@ -9,7 +10,7 @@ const tiers = [
     description: "Weatherproof acrylic panel. You provide the details, we print.",
     features: ["Weatherproof acrylic", "Custom printed", "MTA compliant"],
     popular: false,
-    image: signHero,
+    image: signBasic,
   },
   {
     name: "Standard",
@@ -17,7 +18,7 @@ const tiers = [
     description: "Aluminium composite panel, fully personalised with your licence number and contact details printed on. Includes fixings.",
     features: ["Aluminium composite", "Fully personalised", "Fixings included", "MTA compliant"],
     popular: true,
-    image: null,
+    image: signStandard,
   },
   {
     name: "Premium",
