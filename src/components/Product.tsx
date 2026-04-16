@@ -10,7 +10,7 @@ const tiers = [
     description: "Weatherproof acrylic panel. You provide the details, we print.",
     features: ["Weatherproof acrylic", "Custom printed", "MTA compliant"],
     popular: false,
-    image: signHero,
+    image: signBasic,
   },
   {
     name: "Standard",
@@ -18,7 +18,7 @@ const tiers = [
     description: "Aluminium composite panel, fully personalised with your licence number and contact details printed on. Includes fixings.",
     features: ["Aluminium composite", "Fully personalised", "Fixings included", "MTA compliant"],
     popular: true,
-    image: null,
+    image: signStandard,
   },
   {
     name: "Premium",
