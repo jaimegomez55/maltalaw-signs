@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Requirement from "@/components/Requirement";
 import Product from "@/components/Product";
@@ -7,6 +8,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => (
   <main>
+    <Navbar />
     <Hero />
     <Requirement />
     <Product />
