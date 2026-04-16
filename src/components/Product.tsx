@@ -1,5 +1,6 @@
 import { Check, Star } from "lucide-react";
 import signPremium from "@/assets/sign-premium.png";
+import signHero from "@/assets/sign-photo.png";
 
 const tiers = [
   {
@@ -8,7 +9,7 @@ const tiers = [
     description: "Weatherproof acrylic panel. You provide the details, we print.",
     features: ["Weatherproof acrylic", "Custom printed", "MTA compliant"],
     popular: false,
-    image: null,
+    image: signHero,
   },
   {
     name: "Standard",

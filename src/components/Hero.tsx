@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="relative min-h-[70vh] flex items-center">
       <div className="absolute inset-0">
         <img src={signPhoto} alt="MTA compliance sign on Malta limestone wall" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-primary/80" />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto text-center px-6 py-20 md:py-32">
         <div className="inline-flex items-center gap-2 bg-secondary/20 text-gold px-4 py-1.5 rounded-full text-sm font-medium mb-8">
@@ -30,7 +30,7 @@ const Hero = () => {
           Order your sign
         </button>
         <p className="mt-6 text-sm text-primary-foreground/60">
-          Trusted by short-let owners across Malta
+          Serving short-let owners across Malta and Gozo.
         </p>
       </div>
     </section>
