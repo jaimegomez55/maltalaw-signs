@@ -1,6 +1,7 @@
 import { Check, Star } from "lucide-react";
+import signBasic from "@/assets/sign-basic.png";
+import signStandard from "@/assets/sign-standard.png";
 import signPremium from "@/assets/sign-premium.png";
-import signHero from "@/assets/sign-photo.png";
 
 const tiers = [
   {
