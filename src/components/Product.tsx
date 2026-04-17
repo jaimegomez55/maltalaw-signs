@@ -6,25 +6,25 @@ import signPremium from "@/assets/sign-premium.png";
 const tiers = [
   {
     name: "Basic",
-    price: "€29",
-    description: "Weatherproof acrylic panel. You provide the details, we print.",
-    features: ["Weatherproof acrylic", "Custom printed", "MTA compliant"],
+    price: "€39",
+    description: "PVC panel, printed and ready to fix. Fully compliant with the 2026 MTA signage requirement.",
+    features: ["Printed PVC panel", "Flat wall mount", "MTA compliant", "Includes fixings"],
     popular: false,
     image: signBasic,
   },
   {
     name: "Standard",
     price: "€59",
-    description: "Aluminium composite panel, fully personalised with your licence number and contact details printed on. Includes fixings.",
-    features: ["Aluminium composite", "Fully personalised", "Fixings included", "MTA compliant"],
+    description: "Aluminium composite panel with stainless steel stand-offs. Professional finish, fully personalised with your details printed on.",
+    features: ["Aluminium composite panel", "Stainless steel stand-offs", "Fully personalised", "Weatherproof", "MTA compliant", "Includes fixings"],
     popular: true,
     image: signStandard,
   },
   {
     name: "Premium",
-    price: "€120",
-    description: "Brushed aluminium, laser engraved. For villas and luxury properties.",
-    features: ["Brushed aluminium", "Laser engraved", "Premium finish", "MTA compliant"],
+    price: "€89",
+    description: "Brushed silver aluminium composite with premium stand-offs. The most professional finish available for your property entrance.",
+    features: ["Brushed silver aluminium composite", "Premium polished stand-offs", "Fully personalised", "Weatherproof", "Premium finish", "MTA compliant", "Includes fixings"],
     popular: false,
     image: signPremium,
   },
@@ -79,7 +79,7 @@ const Product = () => (
         ))}
       </div>
       <p className="text-center mt-8 text-muted-foreground text-sm">
-        Installation available across Malta — €45 per property
+        Installation available across Malta and Gozo — €45 per property
       </p>
     </div>
   </section>
