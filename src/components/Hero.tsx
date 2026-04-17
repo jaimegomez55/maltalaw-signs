@@ -27,7 +27,7 @@ const Hero = () => {
           onClick={scrollToOrder}
           className="bg-secondary text-secondary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary/90 transition-colors"
         >
-          Order your sign
+          Reserve your sign
         </button>
         <p className="mt-6 text-sm text-primary-foreground/60">
           Serving short-let owners across Malta and Gozo.

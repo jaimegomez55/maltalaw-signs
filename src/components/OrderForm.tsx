@@ -31,9 +31,9 @@ const OrderForm = () => {
             <div className="w-16 h-16 bg-secondary/20 text-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-sans">
               ✓
             </div>
-            <h2 className="text-2xl mb-4 text-foreground">Order received</h2>
+            <h2 className="text-2xl mb-4 text-foreground">Your spot is reserved</h2>
             <p className="text-muted-foreground">
-              We will be in touch within 24 hours to confirm and send payment.
+              We will be in touch within 48 hours to confirm your order and arrange payment.
             </p>
           </div>
         </div>
@@ -88,9 +88,9 @@ const OrderForm = () => {
             <div>
               <label className={labelClass}>Sign tier</label>
               <select className={inputClass} value={form.tier} onChange={(e) => update("tier", e.target.value)}>
-                <option value="Basic">Basic — €39</option>
-                <option value="Standard">Standard — €59</option>
-                <option value="Premium">Premium — €89</option>
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
               </select>
             </div>
             <div className="flex items-end pb-1">
@@ -116,10 +116,10 @@ const OrderForm = () => {
             type="submit"
             className="w-full bg-secondary text-secondary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-secondary/90 transition-colors"
           >
-            Place my order
+            Reserve my sign
           </button>
           <p className="text-center text-xs text-muted-foreground">
-            We will confirm your order and send a payment link within 24 hours.
+            We will confirm availability and send your payment link within 48 hours.
           </p>
         </form>
       </div>
