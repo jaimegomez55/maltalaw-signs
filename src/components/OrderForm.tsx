@@ -88,9 +88,9 @@ const OrderForm = () => {
             <div>
               <label className={labelClass}>Sign tier</label>
               <select className={inputClass} value={form.tier} onChange={(e) => update("tier", e.target.value)}>
-                <option>Basic</option>
-                <option>Standard</option>
-                <option>Premium</option>
+                <option value="Basic">Basic — €39</option>
+                <option value="Standard">Standard — €59</option>
+                <option value="Premium">Premium — €89</option>
               </select>
             </div>
             <div className="flex items-end pb-1">
