@@ -1,7 +1,13 @@
 import { useState } from "react";
 
+const WEB3FORMS_KEY = "70614a27-8d0a-43bd-a1bc-f818e316a3f1";
+const SHEETS_URL =
+  "https://script.google.com/macros/s/AKfycbwqZqsQgOPh05K76-JEk0-nL_YKirv61MksSLFRgJWNn9XmZHF0pHgtcl5nrohtLPgf/exec";
+
 const OrderForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -18,9 +24,67 @@ const OrderForm = () => {
   const update = (field: string, value: string | boolean) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const web3FormsPayload = {
+      access_key: WEB3FORMS_KEY,
+      name: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      mta_licence: form.mtaLicence,
+      property_address: form.propertyAddress,
+      contact_name: form.contactName,
+      contact_phone: form.contactPhone,
+      sign_level: form.tier,
+      installation: form.installation ? "Yes (€45)" : "No",
+      notes: form.notes,
+    };
+
+    const sheetsPayload = {
+      name: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      mta_licence: form.mtaLicence,
+      property_address: form.propertyAddress,
+      contact_name: form.contactName,
+      contact_phone: form.contactPhone,
+      sign_level: form.tier,
+      installation: form.installation,
+      notes: form.notes,
+    };
+
+    try {
+      await Promise.all([
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(web3FormsPayload),
+        }).then((res) => {
+          if (!res.ok) throw new Error("Email notification failed");
+          return res.json();
+        }),
+        fetch(SHEETS_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(sheetsPayload),
+        }).then((res) => {
+          if (!res.ok) throw new Error("Sheets logging failed");
+        }),
+      ]);
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or contact us directly."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -112,11 +176,17 @@ const OrderForm = () => {
             <label className={labelClass}>Notes <span className="text-muted-foreground font-normal">(optional)</span></label>
             <textarea rows={3} className={inputClass} value={form.notes} onChange={(e) => update("notes", e.target.value)} />
           </div>
+          {error && (
+            <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+              {error}
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full bg-secondary text-secondary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-secondary/90 transition-colors"
+            disabled={loading}
+            className="w-full bg-secondary text-secondary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-secondary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Reserve my sign
+            {loading ? "Sending…" : "Reserve my sign"}
           </button>
           <p className="text-center text-xs text-muted-foreground">
             We will confirm availability and send your payment link within 48 hours.
