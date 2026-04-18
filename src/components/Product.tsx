@@ -11,6 +11,7 @@ const tiers = [
     features: ["Printed PVC panel", "Flat wall mount", "MTA compliant", "Includes fixings"],
     popular: false,
     image: signBasic,
+    imageAlt: "Basic acrylic MTA licence sign for Malta short let",
   },
   {
     name: "Standard",
@@ -19,6 +20,7 @@ const tiers = [
     features: ["Aluminium composite panel", "Stainless steel stand-offs", "Fully personalised", "Weatherproof", "MTA compliant", "Includes fixings"],
     popular: true,
     image: signStandard,
+    imageAlt: "Standard aluminium MTA licence sign for Malta holiday premises",
   },
   {
     name: "Premium",
@@ -27,6 +29,7 @@ const tiers = [
     features: ["Brushed silver aluminium composite", "Premium polished stand-offs", "Fully personalised", "Weatherproof", "Premium finish", "MTA compliant", "Includes fixings"],
     popular: false,
     image: signPremium,
+    imageAlt: "Premium laser engraved MTA licence sign Malta",
   },
 ];
 
@@ -46,7 +49,7 @@ const Product = () => (
           >
             {t.image && (
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={t.image} alt={`${t.name} sign`} className="w-full h-full object-cover" />
+                <img src={t.image} alt={t.imageAlt} className="w-full h-full object-cover" />
               </div>
             )}
             <div className="p-8">

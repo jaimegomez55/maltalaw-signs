@@ -18,7 +18,7 @@ const Hero = () => {
           New regulation — June 2026
         </div>
         <h1 className="text-3xl md:text-5xl leading-tight mb-6 text-primary-foreground">
-          Is your short-let legally compliant from June 2026?
+          Short Let Sign Malta — Stay Compliant Before June 2026
         </h1>
         <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 leading-relaxed max-w-2xl mx-auto">
           New MTA regulations require every short-let property in Malta to display a licence sign outside the entrance. We make them. Delivered in 3 days.

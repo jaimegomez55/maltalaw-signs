@@ -8,7 +8,7 @@ const steps = [
 const HowItWorks = () => (
   <section className="py-20 px-6 bg-background">
     <div className="max-w-5xl mx-auto">
-      <h2 className="text-2xl md:text-3xl text-center mb-12 text-foreground">How It Works</h2>
+      <h2 className="text-2xl md:text-3xl text-center mb-12 text-foreground">How to get your Malta short let sign in 3 days</h2>
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
         {steps.map((s, i) => (
           <div key={s.num} className="text-center">

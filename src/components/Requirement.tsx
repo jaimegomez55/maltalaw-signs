@@ -21,7 +21,7 @@ const cards = [
 const Requirement = () => (
   <section className="py-20 px-6 bg-background">
     <div className="max-w-5xl mx-auto">
-      <h2 className="text-2xl md:text-3xl text-center mb-12 text-foreground">The Requirement</h2>
+      <h2 className="text-2xl md:text-3xl text-center mb-12 text-foreground">Malta short let sign requirement — Tourism Accommodation Regulations 2026</h2>
       <div className="grid md:grid-cols-3 gap-6">
         {cards.map((c) => (
           <div key={c.title} className="bg-card border border-border rounded-lg p-8">
